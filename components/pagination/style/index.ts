@@ -663,6 +663,10 @@ const genPaginationStyle: GenerateStyle<PaginationToken, CSSObject> = (token) =>
       ...resetComponent(token),
       display: 'flex',
       alignItems: 'center',
+      // Keep the whole pagination unselectable: clicking the jump buttons
+      // repeatedly can leave a selection on the size changer text or on the
+      // whitespace between the items
+      userSelect: 'none',
 
       '&-start': {
         justifyContent: 'start',
